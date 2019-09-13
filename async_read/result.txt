@@ -1,7 +1,7 @@
 demo coro:0x18ff260
 _primo coro:0x19ce6d0
 switch 0x18ff400
-EnterEntry 0x18ff400 //这里调read的时候让出cpu
+EnterEntry 0x18ff400 //这里调connect的时候让出cpu
 switch 0x18ff5a0
 EnterEntry 0x18ff5a0
 switch 0x18ff740
@@ -13,7 +13,7 @@ EnterEntry 0x18ffa80
 switch 0x18ffc20
 EnterEntry 0x18ffc20
 switch 0x18ff260
-switch 0x18ff400 //发送完成之后回来read,又让出cpu
+switch 0x18ff400 //这里调用read让出cpu(write的时候如果一次能写完是不会让的)
 switch 0x18ff5a0
 switch 0x18ff740
 switch 0x18ff8e0
@@ -40,3 +40,4 @@ rsp:server response
 0x18ffc20 server response ret:15
 switch 0x18ff260
 
+这里有个connect的过程，所以比async_mysql多一次协程切换

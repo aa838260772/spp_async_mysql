@@ -34,12 +34,14 @@ void threadEntry(void * arg)
 		cout << "connect fail" << endl;
 		return;
 	}
+	printf("connect\n");
 	ret = write(fd, sndmsg, strlen(sndmsg));
 	if(!ret)
 	{
 		cout << "write fail" << endl;
 		return;
 	}
+	printf("write\n");
 	//协程读写默认的超时时间是500ms  mt_sys_hook.cpp 94,现在改为10s测试
 	ret = read(fd, rcv, sizeof(rcv));
 	if(ret)
@@ -76,7 +78,7 @@ int main()
 	int i = 0;
 	while(1)
 	{
-		if(i++ > 5)
+		if(i++ > 0)
 		{
 			break;
 		}

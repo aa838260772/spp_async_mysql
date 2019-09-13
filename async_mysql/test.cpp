@@ -187,7 +187,7 @@ int main()
 		return -1;
 	}
 
-	if(!MysqlPool::Inst().Init(10))
+	if(!MysqlPool::Inst().Init(1))
 	{
 		printf("init mysql pool fail!\n");
 	}
@@ -195,7 +195,7 @@ int main()
 	int i = 0;
 	while(1)
 	{
-		if(i++ > 4)
+		if(i++ > 0)
 		{
 			break;
 		}
