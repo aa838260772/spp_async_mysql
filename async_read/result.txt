@@ -1,0 +1,42 @@
+demo coro:0x18ff260
+_primo coro:0x19ce6d0
+switch 0x18ff400
+EnterEntry 0x18ff400 //这里调read的时候让出cpu
+switch 0x18ff5a0
+EnterEntry 0x18ff5a0
+switch 0x18ff740
+EnterEntry 0x18ff740
+switch 0x18ff8e0
+EnterEntry 0x18ff8e0
+switch 0x18ffa80
+EnterEntry 0x18ffa80
+switch 0x18ffc20
+EnterEntry 0x18ffc20
+switch 0x18ff260
+switch 0x18ff400 //发送完成之后回来read,又让出cpu
+switch 0x18ff5a0
+switch 0x18ff740
+switch 0x18ff8e0
+switch 0x18ffa80
+switch 0x18ffc20
+switch 0x18ff260
+switch 0x18ff400 //切回读取回包
+rsp:server response
+0x18ff400 server response ret:15
+switch 0x18ff5a0
+rsp:server response
+0x18ff5a0 server response ret:15
+switch 0x18ff740
+rsp:server response
+0x18ff740 server response ret:15
+switch 0x18ff8e0
+rsp:server response
+0x18ff8e0 server response ret:15
+switch 0x18ffa80
+rsp:server response
+0x18ffa80 server response ret:15
+switch 0x18ffc20
+rsp:server response
+0x18ffc20 server response ret:15
+switch 0x18ff260
+
