@@ -1,0 +1,2 @@
+静态库方式：连接-lmt,直接将mysql同步socket操作都Hook异步化
+动态库方式需要LD_PRELOAD
